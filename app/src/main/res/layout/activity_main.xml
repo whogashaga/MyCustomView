@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,5 +13,12 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_holder" />
+
+    <com.kerry.customview.scrollbar.MyVerticalScrollbar
+        android:id="@+id/scrollbar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:revealDurationAfterStop="500"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,4 +10,19 @@
             <enum name="left" value="3"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="MyVerticalScrollbar">
+        <attr name="thumbBackground" format="reference|color" />
+        <attr name="trackBackground" format="reference|color" />
+        <attr name="thumbWidth" format="dimension" />
+        <attr name="trackWidth" format="dimension" />
+        <attr name="thumbHeight" format="dimension" />
+        <attr name="trackHeight" format="dimension" />
+        <attr name="indicatorBackground" format="reference|color" />
+        <attr name="indicatorWidth" format="dimension" />
+        <attr name="indicatorHeight" format="dimension" />
+        <attr name="indicatorTextColor" format="color" />
+        <attr name="indicatorTextSize" format="dimension" />
+        <attr name="revealDurationAfterStop" format="integer" />
+    </declare-styleable>
 </resources>

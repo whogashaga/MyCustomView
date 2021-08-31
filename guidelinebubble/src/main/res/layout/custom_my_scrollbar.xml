@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/viewTrack"
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_card_white_4dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvScrollbarIndicator"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewThumb"
+        android:layout_width="4dp"
+        android:layout_height="20dp"
+        android:background="@drawable/bg_card_3f3a3a_4dp"
+        app:layout_constraintEnd_toEndOf="@id/viewTrack"
+        app:layout_constraintTop_toTopOf="@id/viewTrack" />
+
+    <TextView
+        android:id="@+id/tvScrollbarIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:background="@drawable/page_number_background"
+        app:layout_constraintTop_toTopOf="@id/viewThumb"
+        app:layout_constraintBottom_toBottomOf="@id/viewThumb"
+        tools:visibility="visible"
+        tools:text="29/1200" />
+
+</merge>

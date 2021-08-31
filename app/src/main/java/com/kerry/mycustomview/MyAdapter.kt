@@ -20,14 +20,14 @@ class MyAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
 
-    override fun getItemCount(): Int = 20
+    override fun getItemCount(): Int = MainActivity.ITEM_COUNT
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val tvContent: TextView = itemView.findViewById(R.id.tvContent)
 
         fun bindView(position: Int) {
-            "item $position".let { tvContent.text = it }
+            "item ${position.plus(1)}".let { tvContent.text = it }
         }
 
     }
