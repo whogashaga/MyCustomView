@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.kerry.guidelinebubble.GuidelineViewTriangle
+    <com.kerry.customview.guideline.GuidelineViewTriangle
         android:id="@+id/triangle_view"
         android:layout_width="20dp"
         android:layout_height="10dp"
