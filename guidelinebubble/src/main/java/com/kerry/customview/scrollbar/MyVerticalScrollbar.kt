@@ -53,7 +53,6 @@ class MyVerticalScrollbar @JvmOverloads constructor(
     }
 
     fun attachTo(rv: RecyclerView, callback: MyScrollbarCallback) {
-        resetScrollbar()
         if (::onScrollListener.isInitialized) {
             rv.removeOnScrollListener(onScrollListener)
         }
