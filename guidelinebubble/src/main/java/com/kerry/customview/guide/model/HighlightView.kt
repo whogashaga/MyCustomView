@@ -1,10 +1,10 @@
 package com.kerry.customview.guide.model
 
+import android.graphics.Rect
 import android.graphics.RectF
 import android.view.View
 import com.kerry.customview.guide.util.LogUtil
 import com.kerry.customview.guide.util.ScreenUtils
-import com.kerry.customview.guide.util.ViewUtils
 import kotlin.math.max
 
 class HighlightView(
@@ -48,7 +48,8 @@ class HighlightView(
 
     private fun fetchLocation(target: View): RectF {
         val location = RectF()
-        val locationInView = ViewUtils.getLocationInView(target, mHole)
+        val locationInView = Rect()
+        mHole.getGlobalVisibleRect(locationInView)
         //左邊界
         if (locationInView.left <= 0) {
             location.left = 10f

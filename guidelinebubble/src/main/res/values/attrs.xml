@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="GuidelineViewTriangle">
-        <attr name="momo_color" format="color"/>
+        <attr name="triangleColor" format="color"/>
         <attr name="layout_gravity" format="integer"/>
-        <attr name="momo_direction">
+        <attr name="direction">
             <enum name="top" value="0"/>
             <enum name="bottom" value="1"/>
             <enum name="right" value="2"/>

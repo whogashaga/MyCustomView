@@ -30,12 +30,12 @@ class GuidelineViewTriangle @JvmOverloads constructor(
             context.theme.obtainStyledAttributes(attrs, R.styleable.GuidelineViewTriangle, 0, 0)
 
         mColor = typedArray.getColor(
-            R.styleable.GuidelineViewTriangle_momo_color,
+            R.styleable.GuidelineViewTriangle_triangleColor,
             Color.WHITE
         )
 
         mDirection =
-            typedArray.getInt(R.styleable.GuidelineViewTriangle_momo_direction, mDirection)
+            typedArray.getInt(R.styleable.GuidelineViewTriangle_direction, mDirection)
 
         typedArray.recycle()
         mPaint.color = mColor

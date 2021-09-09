@@ -85,8 +85,8 @@ class GuidelineView {
         private var triangleOffset = 0
         private var highlightPadding = 8
         private var guidePadding = 8
-        private var enterAnimDuration = 600L
-        private var exitAnimDuration = 600L
+        private var enterAnimDuration = 100L
+        private var exitAnimDuration = 100L
         private var customIdRes = 0
         private var guidePositionOffset = 0
         private var highlightShape = Highlight.Shape.ROUND_RECTANGLE

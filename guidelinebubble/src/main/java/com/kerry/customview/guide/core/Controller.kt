@@ -162,7 +162,7 @@ class Controller(builder: Builder) {
                 1.0f,
                 1.05f,
                 Animation.ABSOLUTE,
-                guideLayout.let { highLight.getRectF(it).centerX() },
+                highLight.getRectF(guideLayout).centerX(),
                 Animation.ABSOLUTE,
                 highLight.getRectF(guideLayout).centerY()
             )

@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                val target1: View? = recyclerView.layoutManager?.getChildAt(6)
-                val target2: View? = recyclerView.layoutManager?.getChildAt(8)
+                val target1: View? = recyclerView.layoutManager?.getChildAt(2)
+                val target2: View? = recyclerView.layoutManager?.getChildAt(4)
                 showBubble(1, target1) {
                     showBubble(2, target2)
                 }
