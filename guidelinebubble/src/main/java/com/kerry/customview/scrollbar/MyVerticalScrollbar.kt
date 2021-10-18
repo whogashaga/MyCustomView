@@ -4,7 +4,6 @@ import android.animation.Animator
 import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -15,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kerry.customview.R
 import com.kerry.customview.databinding.CustomMyScrollbarBinding
+import com.kerry.customview.guide.util.ScreenUtils
 
 class MyVerticalScrollbar @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -83,7 +83,7 @@ class MyVerticalScrollbar @JvmOverloads constructor(
                 }
 
                 val range = rv.computeVerticalScrollRange()
-                val maxEndY: Float = (range - rv.measuredHeight).toFloat()
+                val maxEndY: Float = (range - rv.measuredHeight).toFloat() + 10
                 endY += dy
                 val proportion: Float = endY / maxEndY
                 val transMaxRange = binding.viewTrack.height - binding.viewThumb.height
