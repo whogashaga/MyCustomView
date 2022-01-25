@@ -19,5 +19,6 @@
     <color name="gray_300">#1F1F1F</color>
 
     <color name="red">#EC0B0B</color>
+    <color name="blue_popup_txt">#3557FF</color>
 
 </resources>

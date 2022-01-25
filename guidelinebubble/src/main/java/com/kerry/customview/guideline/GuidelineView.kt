@@ -260,7 +260,7 @@ class GuidelineView {
                     highlightPadding,
                     object : RelativeGuide(view, gravity, gravity2, guidePositionOffset, guidePadding) {
                         override fun onLayoutInflated(view: View?, controller: Controller) {
-                            view?.findViewById<TextView>(R.id.tvOk)?.setOnClickListener {
+                            view?.findViewById<TextView>(R.id.textView_subtitle)?.setOnClickListener {
                                 controller.showNextPage()
                             }
                         }

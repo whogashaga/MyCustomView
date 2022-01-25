@@ -16,6 +16,7 @@
         android:tag="triangle" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="6dp"
@@ -36,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="4.5dp"
                 android:paddingBottom="4.5dp"
-                android:textColor="@color/red"
+                android:textColor="@color/blue_popup_txt"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,19 +54,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_title"
                 tool:text="新功能上線了" />
 
-            <TextView
-                android:id="@+id/tvOk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingTop="3.5dp"
-                android:paddingBottom="3.5dp"
-                android:text="@string/ok"
-                android:textColor="@color/gray_999999"
-                android:textSize="13sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView_subtitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
