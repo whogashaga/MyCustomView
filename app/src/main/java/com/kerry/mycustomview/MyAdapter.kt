@@ -5,8 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.kerry.customview.scrollbar.FastScroller
 
-class MyAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MyAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), FastScroller.SectionIndexer {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_holder, parent, false)
@@ -21,6 +22,10 @@ class MyAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     override fun getItemCount(): Int = MainActivity.ITEM_COUNT
+
+    override fun getSectionText(position: Int): CharSequence {
+        return "${position.plus(1)}/${itemCount}"
+    }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

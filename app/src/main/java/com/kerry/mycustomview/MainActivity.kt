@@ -10,38 +10,40 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kerry.customview.guideline.GuidelineView
 import com.kerry.customview.scrollbar.MyVerticalScrollbar
 import com.kerry.customview.scrollbar.MyVerticalScrollbar.MyScrollbarCallback
+import com.kerry.customview.scrollbar.extension.setContentView
+import com.kerry.customview.scrollbar.extension.viewBinding
+import com.kerry.mycustomview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private val recyclerView: RecyclerView by lazy { findViewById(R.id.rv) }
-    private val scrollbar: MyVerticalScrollbar by lazy { findViewById(R.id.scrollbar) }
+    private val binding by viewBinding(ActivityMainBinding::inflate)
 
     private val PREF_GUIDE_TEST = "pref_guide_test"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding.setContentView(this)
 
-        with(recyclerView) {
+        with(binding.rv) {
             adapter = MyAdapter()
-            scrollbar.attachTo(this, object : MyScrollbarCallback {
-                override fun getTotalItemAmount(): Int = ITEM_COUNT
-
-                override fun onCurrentItemCountGet(currentCount: Int) {
-                    scrollbar.setIndicatorText("${currentCount.plus(1)} / $ITEM_COUNT")
-                }
-
-                override fun showBtnGoTop(isShow: Boolean) {
-
-                }
-
-            })
+//            binding.scrollbar.attachTo(this, object : MyScrollbarCallback {
+//                override fun getTotalItemAmount(): Int = ITEM_COUNT
+//
+//                override fun onCurrentItemCountGet(currentCount: Int) {
+//                    scrollbar.setIndicatorText("${currentCount.plus(1)} / $ITEM_COUNT")
+//                }
+//
+//                override fun showBtnGoTop(isShow: Boolean) {
+//
+//                }
+//
+//            })
         }
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                val target1: View? = recyclerView.layoutManager?.getChildAt(2)
-                val target2: View? = recyclerView.layoutManager?.getChildAt(4)
+                val target1: View? = binding.rv.layoutManager?.getChildAt(2)
+                val target2: View? = binding.rv.layoutManager?.getChildAt(4)
                 showBubble(1, target1) {
                     showBubble(2, target2)
                 }

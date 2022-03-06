@@ -7,18 +7,28 @@
     android:animateLayoutChanges="true"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.kerry.customview.scrollbar.FastScrollRecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:bubbleSize="small"
+        app:showBubbleAlways="true"
+        app:bubbleColor="@color/white"
         tools:listitem="@layout/item_holder" />
 
-    <com.kerry.customview.scrollbar.MyVerticalScrollbar
-        android:id="@+id/scrollbar"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:revealDurationAfterStop="500"
-        app:layout_constraintEnd_toEndOf="parent"/>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        tools:listitem="@layout/item_holder" />-->
+
+<!--    <com.kerry.customview.scrollbar.MyVerticalScrollbar-->
+<!--        android:id="@+id/scrollbar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:revealDurationAfterStop="500"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
