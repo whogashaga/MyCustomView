@@ -36,6 +36,8 @@
         <attr format="color" name="handleColor" />
         <attr format="color" name="trackColor" />
         <attr format="dimension" name="bubbleTextSize" />
+        <attr format="integer" name="scrollbarAnimDuration" />
+        <attr format="integer" name="scrollbarHideDelay" />
         <attr format="enum" name="bubbleSize">
             <enum name="big" value="1" />
             <enum name="normal" value="1" />

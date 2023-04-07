@@ -14,7 +14,9 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:bubbleSize="small"
         app:showBubbleAlways="true"
-        app:bubbleColor="@color/white"
+        app:bubbleColor="@color/blue_edf3fd"
+        app:scrollbarHideDelay="300"
+        app:scrollbarAnimDuration="300"
         tools:listitem="@layout/item_holder" />
 
 <!--    <androidx.recyclerview.widget.RecyclerView-->

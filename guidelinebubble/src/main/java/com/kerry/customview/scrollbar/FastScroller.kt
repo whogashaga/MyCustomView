@@ -62,8 +62,8 @@ import com.kerry.customview.scrollbar.extension.wrap
 import kotlin.math.roundToInt
 
 private const val BUBBLE_ANIM_DURATION = 100L
-private const val SCROLLBAR_ANIM_DURATION = 300L
-private const val SCROLLBAR_HIDE_DELAY = 1000L
+private const val SCROLLBAR_ANIM_DURATION = 300
+private const val SCROLLBAR_HIDE_DELAY = 1000
 private const val TRACK_SNAP_RANGE = 5
 
 /**
@@ -121,6 +121,8 @@ class FastScroller : LinearLayout {
     private var bubbleImage: Drawable? = null
     private var handleImage: Drawable? = null
     private var trackImage: Drawable? = null
+    private var scollbarAnimDuration = 100L
+    private var scrollbarHideDelay = 1000L
     private var recyclerView: RecyclerView? = null
     private var swipeRefreshLayout: SwipeRefreshLayout? = null
     private var scrollbarAnimator: ViewPropertyAnimator? = null
@@ -170,7 +172,7 @@ class FastScroller : LinearLayout {
                         if (showBubbleAlways && sectionIndexer != null) showBubble()
                     }
                     RecyclerView.SCROLL_STATE_IDLE -> if (hideScrollbar && !handleView.isSelected) {
-                        handler.postDelayed(scrollbarHider, SCROLLBAR_HIDE_DELAY)
+                        handler.postDelayed(scrollbarHider, scrollbarHideDelay)
                     }
                 }
             }
@@ -227,7 +229,7 @@ class FastScroller : LinearLayout {
                 requestDisallowInterceptTouchEvent(false)
                 setHandleSelected(false)
 
-                if (hideScrollbar) handler.postDelayed(scrollbarHider, SCROLLBAR_HIDE_DELAY)
+                if (hideScrollbar) handler.postDelayed(scrollbarHider, scrollbarHideDelay)
                 if (!showBubbleAlways) hideBubble()
 
                 fastScrollListener?.onFastScrollStop(this)
@@ -576,14 +578,14 @@ class FastScroller : LinearLayout {
             scrollbar.translationX = scrollbarPaddingEnd
             scrollbar.isVisible = true
             scrollbarAnimator = scrollbar.animate().translationX(0f).alpha(1f)
-                .setDuration(SCROLLBAR_ANIM_DURATION)
+                .setDuration(scollbarAnimDuration)
                 .setListener(alphaAnimatorListener)
         }
     }
 
     private fun hideScrollbar() {
         scrollbarAnimator = scrollbar.animate().translationX(scrollbarPaddingEnd).alpha(0f)
-            .setDuration(SCROLLBAR_ANIM_DURATION)
+            .setDuration(scollbarAnimDuration)
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
                     super.onAnimationEnd(animation)
@@ -633,6 +635,12 @@ class FastScroller : LinearLayout {
             showTrack = getBoolean(R.styleable.FastScrollRecyclerView_showTrack, showTrack)
             bubbleSize = getSize(R.styleable.FastScrollRecyclerView_bubbleSize, size.ordinal)
             textSize = getDimension(R.styleable.FastScrollRecyclerView_bubbleTextSize, bubbleSize.textSize)
+            scollbarAnimDuration = runCatching {
+                getInteger(R.styleable.FastScrollRecyclerView_scrollbarAnimDuration, SCROLLBAR_ANIM_DURATION).toLong()
+            }.getOrElse { SCROLLBAR_ANIM_DURATION.toLong() }
+            scrollbarHideDelay = runCatching {
+                getInteger(R.styleable.FastScrollRecyclerView_scrollbarHideDelay, SCROLLBAR_HIDE_DELAY).toLong()
+            }.getOrElse { SCROLLBAR_HIDE_DELAY.toLong() }
         }
 
         setTrackColor(trackColor)
